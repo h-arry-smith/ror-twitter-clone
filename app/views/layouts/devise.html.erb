@@ -10,16 +10,13 @@
         <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     </head>
 
-    <body class="container-fluid" >
+    <body class="container" >
         <%= render "shared/flash" %>
         <div class="row">
-            <div class="col-3 p-4 border-end">
-                <%= render "shared/navbar" %>
-            </div>
-            <div class="col-6 p-4">
+            <div class="col-6"></div>
+            <div class="col-6">
                 <%= yield %>
             </div>
-            <div class="col-3 p-4 border-start"></div>
         </div>
     </body>
 </html>
