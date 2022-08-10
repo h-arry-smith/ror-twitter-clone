@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blabber</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+        <title>Blabber</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  </head>
+        <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+        <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    </head>
 
-  <body>
-    <%= yield %>
-  </body>
+    <body class="container-fluid" >
+        <%= render "shared/flash" %>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <%= yield %>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </body>
 </html>

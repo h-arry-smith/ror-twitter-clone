@@ -1,0 +1,17 @@
+<div class="position-fixed d-flex flex-column top-0 end-0 mt-4 me-4">
+    <% flash.each do |type, msg| %>
+        <% if type == 'notice' %>
+            <div class="alert alert-info alert-dismissible fade show shadow" role="alert">
+                <%= msg %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <% end %>
+
+        <% if type == 'alert' %>
+            <div class="alert alert-warning alert-dismissible fade show shadow" role="alert">
+                <%= msg %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <% end %>
+    <% end %>
+</div>
