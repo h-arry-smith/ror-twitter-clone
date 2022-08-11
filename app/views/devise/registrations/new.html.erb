@@ -5,13 +5,22 @@
                 blabber.
             </h1>
 
+
             <h2 class="mb-4 mt-4">Create your new blabber</h2>
 
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                 <%= render "devise/shared/error_messages", resource: resource %>
 
+                <div class="input-group mb-3">
+                    <span class="input-group-text">@</span>
+                    <div class="form-floating">
+                        <%= f.text_field :handle, autofocus: true, placeholder: "username", class: "form-control" %>
+                        <%= f.label :handle %>
+                    </div>
+                </div>
+
                 <div class="mb-3 form-floating">
-                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "hello@email.com", class: "form-control" %>
+                    <%= f.email_field :email, autocomplete: "email", placeholder: "hello@email.com", class: "form-control" %>
                     <%= f.label :email %>
                 </div>
 

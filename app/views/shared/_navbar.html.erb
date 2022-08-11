@@ -3,14 +3,16 @@
         blabber.
     <% end %>
 </div>
-<ul class="nav flex-column align-items-end">
+
+<hr/>
+
+<ul class="nav nav-pills flex-column align-items-end mt-4">
     <li class="nav-item">
-        <%= link_to_unless_current "Your Feed", root_path, class: "nav-link active" do %>
+        <%= link_to_unless_current "Your Feed", root_path, class: "nav-link" do %>
             <p class="nav-link fw-bolder text-body">Your Feed</p>
         <% end %>
-        <%= link_to_unless_current "Edit Profile", edit_user_registration_path, class: "nav-link active" do %>
-            <p class="nav-link fw-bolder text-body">Edit Profile</p>
-        <% end %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-link fw-bolder text-body text-end" %>
+    </li>
+    <li class="nav-item">
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
     </li>
 </ul>
