@@ -12,3 +12,10 @@ User.create!(
   bio: "An indie hacker and dev influencer",
   display_name: "Harry"
 )
+
+User.create!(
+  email: "test@test.com",
+  display_name: "Test McTest",
+  handle: "testy",
+  password: "secret"
+)
