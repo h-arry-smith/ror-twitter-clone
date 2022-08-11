@@ -4,8 +4,11 @@
 
 import { application } from "./application"
 
+import DisableSaveController from "./disable_save_controller"
+application.register("disable-save", DisableSaveController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import SettingsController from "./settings_controller"
-application.register("settings", SettingsController)
+import LengthController from "./length_controller"
+application.register("length", LengthController)

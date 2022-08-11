@@ -2,23 +2,34 @@
 
 <hr/>
 
-<div class="mt-4" data-controller="settings">
+<div class="mt-4" data-controller="disable-save" data-action="length:add->disable-save#add length:remove->disable-save#remove">
     <%= form_with model: @user, url: settings_path do |f| %>
         <%= render "shared/errors", model: @user %>
 
-        <div class="mb-3">
+        <div class="mb-3" data-controller="length" data-length-max-value="100">
+            <%= f.label :display_name, class: "form-label fs-5" %>
+            <%= f.text_field :display_name,
+             class: "form-control",
+             data: {length_target: "field", action: "length#change"} %>
+
+            <p class="form-text text-end" data-length-target="length">
+                0/100
+            </p>
+        </div>
+
+        <div class="mb-3" data-controller="length" data-length-max-value="200" >
             <%= f.label :bio, class: "form-label fs-5" %>
             <%= f.text_area :bio,
              rows: 5,
              class: "form-control",
-             data: {settings_target: "bio", action: "settings#bio"},
+             data: {length_target: "field", action: "length#change"},
              placeholder: "Write a short description about you and what your up to." %>
 
-            <p class="form-text text-end" data-settings-target="length">
+            <p class="form-text text-end" data-length-target="length">
                 0/200
             </p>
         </div>
 
-        <%= f.submit "Save", class: "btn btn-primary btn-large", data:{settings_target: "save"} %>
+        <%= f.submit "Save", class: "btn btn-primary btn-large", data: {disable_save_target: "save"} %>
     <% end %>
 </div>

@@ -20,6 +20,14 @@
                 </div>
 
                 <div class="mb-3 form-floating">
+                    <%= f.email_field :display_name, placeholder: "name", class: "form-control" %>
+                    <%= f.label :display_name %>
+                    <div class="form-text">
+                        This how your name will appear to other users on your profile.
+                    </div>
+                </div>
+
+                <div class="mb-3 form-floating">
                     <%= f.email_field :email, autocomplete: "email", placeholder: "hello@email.com", class: "form-control" %>
                     <%= f.label :email %>
                 </div>
