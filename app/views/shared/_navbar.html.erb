@@ -13,6 +13,11 @@
         <% end %>
     </li>
     <li class="nav-item">
+        <%= link_to_unless_current "Settings", settings_path, class: "nav-link" do %>
+            <p class="nav-link fw-bolder text-body">Settings</p>
+        <% end %>
+    </li>
+    <li class="nav-item">
         <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
     </li>
 </ul>

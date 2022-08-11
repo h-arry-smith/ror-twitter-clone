@@ -1,0 +1,19 @@
+<h1>Settings</h1>
+
+<hr/>
+
+<div class="mt-4">
+    <%= form_with model: @user, url: settings_path do |f| %>
+        <%= render "shared/errors", model: @user %>
+
+        <div class="mb-3">
+            <%= f.label :bio, class: "form-label fs-5" %>
+            <%= f.text_area :bio, class: "form-control" %>
+            <div class="form-text">
+                Write a short description about you and what your up to. Maximum length 200 characters.
+            </div>
+        </div>
+
+        <%= f.submit "Save", class: "btn btn-primary btn-large" %>
+    <% end %>
+</div>

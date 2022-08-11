@@ -5,4 +5,5 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :validatable
 
   validates :handle, presence: true, length: { minimum: 2, maximum: 40 }, uniqueness: true
+  validates :bio, length: { maximum: 200 }
 end

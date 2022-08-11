@@ -1,0 +1,19 @@
+<% if model.errors.any? %>
+    <div class="alert alert-danger alert-dismissable fade show"  role="alert">
+        <div class="d-flex align-items-center justify-content-between">
+            <h4 class="alert-heading">
+                <%= I18n.t("errors.messages.not_saved", count: model.errors.count, resource: model.class.model_name.human.downcase) %>
+            </h4>
+
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <hr/>
+
+        <ul>
+            <% model.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
