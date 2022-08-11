@@ -11,15 +11,11 @@ export default class extends Controller {
   add(event) {
     this.preventers.add(event.detail.field);
     this.updateSaveButton();
-
-    console.log('add', this.preventers);
   }
 
   remove(event) {
     this.preventers.delete(event.detail.field);
     this.updateSaveButton();
-
-    console.log('remove', this.preventers);
   }
 
   updateSaveButton() {

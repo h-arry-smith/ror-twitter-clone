@@ -7105,3 +7105,15 @@ Info 7095 [12:28:19.338] getCompletionsAtPosition: getCompletionEntriesFromSymbo
 Info 7096 [12:28:23.875] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
 Info 7097 [12:28:23.884] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 816 structureChanged: false structureIsReused:: Completely Elapsed: 8.943143844604492ms
 Info 7098 [12:28:23.884] Different program with same set of files
+Info 7099 [14:32:20.542] Starting updateGraphWorker: Project: /dev/null/inferredProject2*
+Info 7100 [14:32:20.559] Finishing updateGraphWorker: Project: /dev/null/inferredProject2* Version: 279 structureChanged: false structureIsReused:: Completely Elapsed: 16.47492027282715ms
+Info 7101 [14:32:20.559] Different program with same set of files
+Info 7102 [14:32:21.100] Starting updateGraphWorker: Project: /dev/null/inferredProject2*
+Info 7103 [14:32:21.109] Finishing updateGraphWorker: Project: /dev/null/inferredProject2* Version: 280 structureChanged: false structureIsReused:: Completely Elapsed: 9.049038887023926ms
+Info 7104 [14:32:21.109] Different program with same set of files
+Info 7105 [14:32:22.320] Starting updateGraphWorker: Project: /dev/null/inferredProject2*
+Info 7106 [14:32:22.326] Finishing updateGraphWorker: Project: /dev/null/inferredProject2* Version: 281 structureChanged: false structureIsReused:: Completely Elapsed: 6.180288314819336ms
+Info 7107 [14:32:22.327] Different program with same set of files
+Info 7108 [14:32:22.699] Starting updateGraphWorker: Project: /dev/null/inferredProject2*
+Info 7109 [14:32:22.705] Finishing updateGraphWorker: Project: /dev/null/inferredProject2* Version: 282 structureChanged: false structureIsReused:: Completely Elapsed: 6.020134925842285ms
+Info 7110 [14:32:22.705] Different program with same set of files

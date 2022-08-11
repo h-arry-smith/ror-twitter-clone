@@ -1,0 +1,18 @@
+<div class="card my-2">
+    <div class="card-header">
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title"><%= blab.user.display_name %></h5>
+            <%= link_to "View this Tweet", user_blab_path(blab.user, blab), class: "link-secondary fs-6 fw-lighter" %>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-n2">
+            <%= link_to user_blabs_path(blab.user), class: "text-decoration-none" do %>
+                <h6 class="card-subtitle">@<%= blab.user.handle %></h6>
+            <% end %>
+            <p class="fs-6 text-secondary mb-0"><%= blab.created_at.to_fs(:long) %></p>
+        </div>
+    </div>
+    <div class="card-body">
+        <p class="card-text"><%= blab.body %></p>
+    </div>
+</div>
