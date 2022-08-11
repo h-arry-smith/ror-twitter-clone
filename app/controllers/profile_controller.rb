@@ -7,7 +7,7 @@ class ProfileController < ApplicationController
     @user = current_user
 
     if @user.update(user_params)
-      redirect_to settings_path, notice: "Your setting saved"
+      redirect_to settings_path, notice: "Your settings have been saved"
     else
       render "edit", status: :unprocessable_entity
     end
