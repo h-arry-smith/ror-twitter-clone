@@ -2,18 +2,23 @@
 
 <hr/>
 
-<div class="mt-4">
+<div class="mt-4" data-controller="settings">
     <%= form_with model: @user, url: settings_path do |f| %>
         <%= render "shared/errors", model: @user %>
 
         <div class="mb-3">
             <%= f.label :bio, class: "form-label fs-5" %>
-            <%= f.text_area :bio, class: "form-control" %>
-            <div class="form-text">
-                Write a short description about you and what your up to. Maximum length 200 characters.
-            </div>
+            <%= f.text_area :bio,
+             rows: 5,
+             class: "form-control",
+             data: {settings_target: "bio", action: "settings#bio"},
+             placeholder: "Write a short description about you and what your up to." %>
+
+            <p class="form-text text-end" data-settings-target="length">
+                0/200
+            </p>
         </div>
 
-        <%= f.submit "Save", class: "btn btn-primary btn-large" %>
+        <%= f.submit "Save", class: "btn btn-primary btn-large", data:{settings_target: "save"} %>
     <% end %>
 </div>
