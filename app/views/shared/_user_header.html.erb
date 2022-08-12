@@ -17,8 +17,12 @@
 
         <div class="d-flex justify-content-between mt-1">
             <div>
-                <span class="text-seconday fs-6 fw-lighter"><span class="fw-bolder"><%= user.followers.count %></span> Followers</span>
-                <span class="text-seconday fs-6 fw-lighter ms-4"><span class="fw-bolder"><%= user.followees.count %></span> Following</span>
+                <%= link_to user_followers_path(user), class: "text-decoration-none link-dark" do %>
+                    <span class="text-seconday fs-6 fw-lighter"><span class="fw-bolder"><%= user.followers.count %></span> Followers</span>
+                <% end %>
+                <%= link_to user_following_path(user), class: "text-decoration-none link-dark" do %>
+                    <span class="text-seconday fs-6 fw-lighter ms-4"><span class="fw-bolder"><%= user.followees.count %></span> Following</span>
+                <% end %>
                 <span class="text-seconday fs-6 fw-lighter ms-4"><span class="fw-bolder"><%= user.blabs.count %></span> Blabs</span>
             </div>
             <span class="text-secondary fs-6 fw-lighter">

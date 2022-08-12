@@ -1,4 +1,9 @@
 class ProfileController < ApplicationController
+  def index
+    @user = User.find_by(handle: params[:handle])
+    @blabs = Blab.where(user_id: @user.id).order(created_at: :desc).all
+  end
+  
   def edit
     @user = current_user
   end
@@ -11,6 +16,14 @@ class ProfileController < ApplicationController
     else
       render "edit", status: :unprocessable_entity
     end
+  end
+
+  def followers
+    @user = User.find_by(handle: params[:handle])
+  end
+
+  def following
+    @user = User.find_by(handle: params[:handle])
   end
 
   private

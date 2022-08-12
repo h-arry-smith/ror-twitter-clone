@@ -6,7 +6,7 @@
         </div>
 
         <div class="d-flex justify-content-between align-items-center mt-n2">
-            <%= link_to user_blabs_path(blab.user), class: "text-decoration-none" do %>
+            <%= link_to profile_path(blab.user), class: "text-decoration-none" do %>
                 <h6 class="card-subtitle">@<%= blab.user.handle %></h6>
             <% end %>
             <p class="fs-6 text-secondary mb-0"><%= blab.created_at.to_fs(:long) %></p>
