@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def set_current_user
+    @user = current_user
+  end
+
+  def set_user_from_handle
+    @user = User.find_by(handle: params[:handle])
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:handle])
   end

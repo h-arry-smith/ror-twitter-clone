@@ -1,6 +1,8 @@
 class BlabsController < ApplicationController
+  before_action :set_current_user, only: %i[new create]
+  before_action :set_user_from_handle, only: %i[index]
+
   def index
-    @user = User.find_by(handle: params[:handle])
     @blabs = Blab.where(user_id: @user.id).order(created_at: :desc).all
   end
 
@@ -9,14 +11,14 @@ class BlabsController < ApplicationController
   end
 
   def new
-    @blab = current_user.blabs.build()
+    @blab = @user.blabs.build()
   end
 
   def create
-    @blab = current_user.blabs.build(blab_params)
+    @blab = @user.blabs.build(blab_params)
 
     if @blab.save
-      redirect_to user_blabs_url(current_user), notice: "You've blabbed it out there!"
+      redirect_to profile_url(current_user), notice: "You've blabbed it out there!"
     else
       render "new", status: :unprocessable_entity
     end
