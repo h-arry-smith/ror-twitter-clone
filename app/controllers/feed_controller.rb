@@ -1,5 +1,6 @@
 class FeedController < ApplicationController
+  before_action :set_current_user, only: %i[index]
   def index
-    @blabs = Blab.where(user_id: current_user.id).order(created_at: :desc).all
+    @blabs = Blab.all_blabs_for_feed(@user)
   end
 end
