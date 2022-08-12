@@ -15,7 +15,7 @@
             <%= user.bio %>
         </div>
 
-        <div class="d-flex justify-content-between mt-1">
+        <div class="d-flex justify-content-between align-items-center mt-1">
             <div>
                 <%= link_to user_followers_path(user), class: "text-decoration-none link-dark" do %>
                     <span class="text-seconday fs-6 fw-lighter"><span class="fw-bolder"><%= user.followers.count %></span> Followers</span>
@@ -25,6 +25,15 @@
                 <% end %>
                 <span class="text-seconday fs-6 fw-lighter ms-4"><span class="fw-bolder"><%= user.blabs.count %></span> Blabs</span>
             </div>
+
+            <% if user != current_user %>
+                <% if current_user.following?(user) %>
+                    <%= button_to "Unfollow", user_follow_path(user), method: :delete, class: "btn btn-sm btn-primary" %>
+                <% else %>
+                    <%= button_to "Follow", user_follow_path(user), class: "btn btn-sm btn-outline-primary" %>
+                <% end %>
+            <% end %>
+
             <span class="text-secondary fs-6 fw-lighter">
                 Joined <%= time_ago_in_words(user.created_at) %> ago
             </span>

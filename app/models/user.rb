@@ -19,4 +19,16 @@ class User < ApplicationRecord
   def to_param
     handle
   end
+
+  def following?(other_user)
+    !followees.where(id: other_user.id).empty?
+  end
+
+  def add_follower(user)
+    user.followees << self
+  end
+
+  def remove_follower(user)
+    user.followees.destroy(self)
+  end
 end
