@@ -18,7 +18,10 @@ class BlabsController < ApplicationController
     @blab = @user.blabs.build(blab_params)
 
     if @blab.save
-      redirect_to profile_url(current_user), notice: "You've blabbed it out there!"
+      respond_to do |format|
+        format.html { redirect_to profile_url(current_user), notice: "You've blabbed it out there!" }
+        format.turbo_stream
+      end
     else
       render "new", status: :unprocessable_entity
     end

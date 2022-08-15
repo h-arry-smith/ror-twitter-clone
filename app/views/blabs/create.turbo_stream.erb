@@ -1,0 +1,2 @@
+<%= turbo_stream.prepend "blab_list", partial: "blabs/blab", locals: { blab: @blab } %>
+<%= turbo_stream.update Blab.new, "" %>

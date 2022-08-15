@@ -1,3 +1,5 @@
 <div class="d-flex flex-column">
-    <%= render blabs %>
+    <%= turbo_frame_tag "blab_list" do %>
+        <%= render blabs %>
+    <% end %>
 </div>

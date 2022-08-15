@@ -1,0 +1,17 @@
+<%= form_with model: blab,
+    data: {controller: "disable-save", action: "length:add->disable-save#add length:remove->disable-save#remove"} do |f| %>
+
+    <%= render "shared/errors", model: blab %>
+
+    <div class="mb-3" data-controller="length" data-length-max-value="250">
+        <%= f.label :body, class: "form-label visually-hidden" %>
+        <%= f.text_area :body, rows: "5", class: "form-control", autofocus: true, data: {length_target: "field", action: "length#change"} %>
+        <div class="form-text d-flex justify-content-end" data-length-target="length">
+            0/25
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <%= f.submit "Save", class: "btn btn-primary btn-lg", data: {disable_save_target: "save"} %>
+    </div>
+<% end %>

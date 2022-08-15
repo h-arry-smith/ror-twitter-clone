@@ -1,1 +1,3 @@
-<%= link_to "Write a Blab", new_blab_path, class: "btn btn-lg btn-outline-success" %>
+<%= link_to "Write a Blab", new_blab_path,
+  class: "btn btn-lg btn-outline-success",
+  data: { turbo_frame: dom_id(Blab.new) } %>
