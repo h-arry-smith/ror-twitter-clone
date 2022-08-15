@@ -1,4 +1,6 @@
 class Blab < ApplicationRecord
+  paginates_per 5
+
   belongs_to :user
 
   has_one :parent, class_name: "Blab", primary_key: :parent_id, foreign_key: :id

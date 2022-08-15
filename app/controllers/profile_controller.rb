@@ -3,7 +3,7 @@ class ProfileController < ApplicationController
   before_action :set_user_from_handle, only: %i[index followers following follow unfollow]
 
   def index
-    @blabs = Blab.where(user_id: @user.id).order(created_at: :desc).all
+    @blabs = Blab.where(user_id: @user.id).order(created_at: :desc).page params[:page]
   end
 
   def edit
@@ -38,9 +38,11 @@ class ProfileController < ApplicationController
   end
 
   def followers
+    @followers = @user.followers.page(params[:page])
   end
 
   def following
+    @followees = @user.followees.page(params[:page])
   end
 
   private
