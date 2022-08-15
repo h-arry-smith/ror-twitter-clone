@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'u/:handle', as: "profile", to: "profile#index"
   scope '/u/:handle', as: "user" do
     resources :blabs, only: %i[index show]
+    get '/blabs/:id/reply', to: "blabs#reply", as: "reply"
 
     get "followers", to: "profile#followers"
     get "following", to: "profile#following"
