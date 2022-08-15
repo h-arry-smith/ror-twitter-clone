@@ -2,7 +2,7 @@
 
 <div class="ms-4 mt-4">
     <h4>Replies</h4>
-    <%= render "blab_list", blabs: @blab.replies %>
+    <%= render "blab_list", blabs: @replies %>
     <%= link_to "Write a Reply", user_reply_url(@blab.user, @blab),
      class: "btn btn-outline-success" %>
 </div>

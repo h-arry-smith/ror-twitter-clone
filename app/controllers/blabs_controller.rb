@@ -8,6 +8,7 @@ class BlabsController < ApplicationController
 
   def show
     @blab = Blab.find(params[:id])
+    @replies = @blab.replies.page(params[:page])
   end
 
   def new
